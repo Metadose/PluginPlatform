@@ -10,3 +10,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/ServiceAsAService/target/
+/ServiceAsAService/src/main/java/com/cebedo/serviceasaservice/sample/nbproject/private/
+/ServiceAsAService/src/main/java/com/cebedo/serviceasaservice/sample/build/
+/ServiceAsAService/src/main/java/com/cebedo/serviceasaservice/sample/dist/
