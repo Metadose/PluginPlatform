@@ -9,6 +9,8 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -16,10 +18,34 @@ import java.io.OutputStream;
  */
 public class PluginHandler implements HttpHandler {
 
+    private static final String ATTR_ACTION = "action";
+    private static final String ATTR_URL = "url";
+    private static final String ATTR_CLASS = "class";
+
+    // TODO Transfer to a UTIL
+    public Map<String, String> queryToMap(String query) {
+        Map<String, String> result = new HashMap<String, String>();
+        for (String param : query.split("&")) {
+            String pair[] = param.split("=");
+            if (pair.length > 1) {
+                result.put(pair[0], pair[1]);
+            } else {
+                result.put(pair[0], "");
+            }
+        }
+        return result;
+    }
+
     @Override
     public void handle(HttpExchange t) {
         try {
-            String response = "Now in plugin handler";
+            Map<String, String> params = queryToMap(t.getRequestURI().getQuery());
+            //http://localhost:8080/plugin?action=222&url=qwe&class=zx
+            String action = params.get(ATTR_ACTION).toString();
+            String url = params.get(ATTR_URL).toString();
+            String clazz = params.get(ATTR_CLASS).toString();
+
+            String response = action + "\n" + url + "\n" + clazz;
             t.sendResponseHeaders(200, response.length());
             OutputStream os = t.getResponseBody();
             os.write(response.getBytes());
