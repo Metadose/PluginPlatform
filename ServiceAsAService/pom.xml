@@ -23,10 +23,5 @@
           <version>3.8.1</version>
           <scope>test</scope>
         </dependency>-->
-        <dependency>
-            <groupId>io.vertx</groupId>
-            <artifactId>vertx-web</artifactId>
-            <version>3.3.2</version>
-        </dependency>
     </dependencies>
 </project>
