@@ -4,6 +4,6 @@ public interface Plugin {
 
     public String getKey();
 
-    public String run(String[] args);
+    public String run(String args);
 
 }

@@ -12,8 +12,8 @@ public class TestPlugin implements Plugin {
     }
 
     @Override
-    public String run(String[] args) {
-        return String.join(" ", args);
+    public String run(String args) {
+        return args;
     }
 
 }

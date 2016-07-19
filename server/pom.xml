@@ -23,7 +23,7 @@
           <version>3.8.1</version>
           <scope>test</scope>
         </dependency>-->
-<!--        <dependency>
+        <!--        <dependency>
             <groupId>com.cebedo.serviceasaservice</groupId>
             <artifactId>plugin</artifactId>
             <version>1.0</version>
