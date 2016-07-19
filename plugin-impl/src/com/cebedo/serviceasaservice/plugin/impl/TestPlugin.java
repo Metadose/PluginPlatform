@@ -2,7 +2,7 @@ package com.cebedo.serviceasaservice.plugin.impl;
 
 import com.cebedo.serviceasaservice.plugin.Plugin;
 
-public class TestPluginImpl implements Plugin {
+public class TestPlugin implements Plugin {
 
     private static final String KEY = "hello-world";
 
@@ -12,9 +12,8 @@ public class TestPluginImpl implements Plugin {
     }
 
     @Override
-    public String run() {
-        System.out.println("Hello Worldddd!");
-        return "Hehe!";
+    public String run(String[] args) {
+        return String.join(" ", args);
     }
 
 }

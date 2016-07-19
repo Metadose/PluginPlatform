@@ -29,11 +29,12 @@ public class JarManager {
     /**
      *
      * @param key
+     * @param args
      * @return
      */
-    public String runJar(String key) {
+    public String runJar(String key, String[] args) {
         Plugin plugin = pluginMap.get(key);
-        return plugin.run();
+        return plugin.run(args);
     }
 
     /**
