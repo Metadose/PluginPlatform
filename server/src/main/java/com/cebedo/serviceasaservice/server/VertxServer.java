@@ -26,8 +26,8 @@ public class VertxServer extends AbstractVerticle {
      * @throws Exception
      */
     private static void loadBuiltInJars() throws Exception {
-        String jarURL = "file:///C:/Users/Vic/Documents/Vic/git/ServiceAsAService/ServiceAsAService/src/main/java/com/cebedo/serviceasaservice/sample/dist/sample.jar";
-        String className = "sample.TestPlugin";
+        String jarURL = "file:///C:/Users/Vic/Documents/Vic/git/ServiceAsAService/plugin-impl/dist/plugin-impl.jar";
+        String className = "com.cebedo.serviceasaservice.plugin.impl.TestPlugin";
         JarManager jarManager = JarManager.getInstance();
         jarManager.loadJar(jarURL, className);
     }

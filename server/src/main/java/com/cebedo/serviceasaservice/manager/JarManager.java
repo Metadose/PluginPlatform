@@ -28,11 +28,11 @@ public class JarManager {
 
     /**
      *
-     * @param urlMapping
+     * @param key
      * @return
      */
-    public String runJar(String urlMapping) {
-        Plugin plugin = pluginMap.get(urlMapping);
+    public String runJar(String key) {
+        Plugin plugin = pluginMap.get(key);
         return plugin.run();
     }
 
