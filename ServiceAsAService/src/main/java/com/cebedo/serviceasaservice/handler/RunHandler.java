@@ -1,30 +1,24 @@
 package com.cebedo.serviceasaservice.handler;
 
-import com.cebedo.serviceasaservice.manager.JarManager;
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpHandler;
-import java.io.IOException;
-import java.io.OutputStream;
+import io.vertx.core.Handler;
+import io.vertx.core.http.HttpMethod;
+import io.vertx.core.http.HttpServerResponse;
+import io.vertx.ext.web.RoutingContext;
 
-public class RunHandler implements HttpHandler {
+public class RunHandler implements Handler<RoutingContext> {
+
+    public static final HttpMethod HTTP_METHOD = HttpMethod.GET;
+    public static final String HTTP_PATH = "/run";
 
     @Override
-    public void handle(HttpExchange t) {
-        try {
-            // Trim the URL to get the JAR mapping.
-            String uri = t.getRequestURI().toString();
-            String urlMapping = uri.substring(4, uri.length());
+    public void handle(RoutingContext event) {
 
-            // Run the JAR.
-            String response = JarManager.getInstance().runJar(urlMapping);
+        // This handler will be called for every request
+        HttpServerResponse response = event.response();
+        response.putHeader("content-type", "text/plain");
 
-            // Send a response.
-            t.sendResponseHeaders(200, response.length());
-            OutputStream os = t.getResponseBody();
-            os.write(response.getBytes());
-            os.close();
-        } catch (IOException e) {
-            ;
-        }
+        // Write to the response and end it
+        response.end("RUN HANDLER!");
     }
+
 }

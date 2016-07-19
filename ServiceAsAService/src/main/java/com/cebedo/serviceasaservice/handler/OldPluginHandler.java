@@ -16,7 +16,7 @@ import java.util.Map;
  *
  * @author Vic
  */
-public class PluginHandler implements HttpHandler {
+public class OldPluginHandler implements HttpHandler {
 
     private static final String ATTR_ACTION = "action";
     private static final String ATTR_URL = "url";

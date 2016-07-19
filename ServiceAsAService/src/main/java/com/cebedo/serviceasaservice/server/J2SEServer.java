@@ -1,7 +1,7 @@
-package com.cebedo.serviceasaservice;
+package com.cebedo.serviceasaservice.server;
 
-import com.cebedo.serviceasaservice.handler.PluginHandler;
-import com.cebedo.serviceasaservice.handler.RunHandler;
+import com.cebedo.serviceasaservice.handler.OldPluginHandler;
+import com.cebedo.serviceasaservice.handler.OldRunHandler;
 import com.cebedo.serviceasaservice.manager.JarManager;
 import com.sun.net.httpserver.HttpServer;
 import java.net.InetSocketAddress;
@@ -10,7 +10,7 @@ import java.net.InetSocketAddress;
  *
  * @author Vic
  */
-public class Server {
+public class J2SEServer {
 
     private static final int SERVER_PORT = 8080;
 
@@ -28,8 +28,8 @@ public class Server {
         // Create contexts.
         // Everything else is default.
         HttpServer server = HttpServer.create(new InetSocketAddress(SERVER_PORT), 0);
-        server.createContext("/plugin", new PluginHandler());
-        server.createContext("/run", new RunHandler());
+        server.createContext("/plugin", new OldPluginHandler());
+        server.createContext("/run", new OldRunHandler());
         server.setExecutor(null);
         server.start();
     }
