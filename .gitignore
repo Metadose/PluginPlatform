@@ -14,3 +14,17 @@ hs_err_pid*
 /ServiceAsAService/src/main/java/com/cebedo/serviceasaservice/sample/nbproject/private/
 /ServiceAsAService/src/main/java/com/cebedo/serviceasaservice/sample/build/
 /ServiceAsAService/src/main/java/com/cebedo/serviceasaservice/sample/dist/
+/plugin/saas-plugin/nbproject/private/
+/plugin/saas-plugin/dist/
+/plugin/saas-plugin/build/
+/sample/saas-plugin-sample/nbproject/private/
+/plugin/nbproject/private/
+/plugin-sample/nbproject/private/
+/plugin/build/
+/plugin/dist/
+/plugin-sample/build/
+/plugin-sample/dist/
+/plugin-impl/nbproject/private/
+/plugin-impl/build/
+/plugin-impl/dist/
+/server/target/

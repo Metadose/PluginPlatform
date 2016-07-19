@@ -24,6 +24,13 @@
           <scope>test</scope>
         </dependency>-->
         <dependency>
+            <groupId>com.cebedo.serviceasaservice</groupId>
+            <artifactId>plugin</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>C:/Users/Vic/Documents/Vic/git/ServiceAsAService/plugin/dist/plugin.jar</systemPath>
+        </dependency>
+        <dependency>
             <groupId>io.vertx</groupId>
             <artifactId>vertx-web</artifactId>
             <version>3.3.2</version>

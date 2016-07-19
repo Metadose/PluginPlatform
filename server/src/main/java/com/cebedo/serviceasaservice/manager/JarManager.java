@@ -57,6 +57,6 @@ public class JarManager {
         Plugin plugin = (Plugin) objInstance;
 
         // Map this plugin.
-        pluginMap.put(plugin.getURLMapping(), plugin);
+        pluginMap.put(plugin.getKey(), plugin);
     }
 }
