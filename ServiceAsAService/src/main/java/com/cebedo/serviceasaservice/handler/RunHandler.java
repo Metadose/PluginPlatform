@@ -1,5 +1,6 @@
 package com.cebedo.serviceasaservice.handler;
 
+import com.cebedo.serviceasaservice.manager.JarManager;
 import io.vertx.core.Handler;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.http.HttpServerResponse;
@@ -16,6 +17,7 @@ public class RunHandler implements Handler<RoutingContext> {
         // This handler will be called for every request
         HttpServerResponse response = event.response();
         response.putHeader("content-type", "text/plain");
+        // String runResult = JarManager.getInstance().runJar(HTTP_PATH);
 
         // Write to the response and end it
         response.end("RUN HANDLER!");
